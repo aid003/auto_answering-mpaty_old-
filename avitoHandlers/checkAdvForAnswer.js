@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 export async function chekIdAdvForAnswer(idAdv) {
   let message = "";
   const currentIdAdv = [
-    { id: 4516692170, type: "telegram" },
     { id: 4517441116, type: "telegram" },
+    { id: 4516692170, type: "telegram" },
   ];
 
   //   { id: 1, typeAdvertizing: 'all', text: 'внешка' },
@@ -24,6 +24,7 @@ export async function chekIdAdvForAnswer(idAdv) {
           text: true,
         },
       });
+      break;
     } else {
       message = await prisma.messages.findUnique({
         where: {
